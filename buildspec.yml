@@ -5,8 +5,10 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
+      - echo uninstalling old version
+      - npm uninstall -g @angular/cli
       - echo Installing Angular CLI...
-      - npm install -g @angular/cli
+      - npm install -g @angular/cli@latest
       - echo Installing project dependencies...
       - npm install
 
