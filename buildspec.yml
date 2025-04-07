@@ -5,16 +5,29 @@ phases:
     runtime-versions:
       nodejs: 18
     commands:
-      - npm install -g @angular/cli@latest
+      - echo Installing Angular CLI...
+      - npm install -g @angular/cli
+      - echo Installing project dependencies...
+      - npm install
+
   pre_build:
     commands:
-      - npm install
-      - npm audit fix  # Fix vulnerabilities
+      - echo Running lint...
+      - npm run lint || echo "Lint warnings ignored"
+
   build:
     commands:
-      - ng build --configuration production  # Updated syntax
+      - echo Building the Angular project...
+      - ng build --configuration production
+
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      # Optional: Copy build output to a dist folder with specific name
+      - cp -r dist/* ./build-output/
 
 artifacts:
-  base-directory: dist/my-angular-project
   files:
     - '**/*'
+  base-directory: build-output
+  discard-paths: no

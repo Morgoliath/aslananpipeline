@@ -5,7 +5,11 @@
     "types": [
       "jasmine",
       "node"
-    ]
+    ],
+    "module": "es2022",
+    "target": "es2022",
+    "moduleResolution": "bundler",
+    "useDefineForClassFields": false
   },
   "files": [
     "src/test.ts",

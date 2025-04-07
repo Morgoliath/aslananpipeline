@@ -7,17 +7,18 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "target": "es2022",
     "importHelpers": true,
-    "target": "es2015",
+    "useDefineForClassFields": false,
     "lib": [
-      "es2018",
+      "es2022",
       "dom"
     ]
   },
   "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
+    "strict": true,
+    "strictTemplates": true
   }
 }
